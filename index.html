@@ -1,140 +1,1149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Global Meridian International Group</title>
-<meta name="description" content="Global Meridian International Group provides comprehensive import and export solutions worldwide.">
-<meta name="google-site-verification" content="iKh-PwARsgme_1RGExif9XpwWqUMJj8nNoFg7Wj3zo" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Meridian International Group</title>
+  <meta name="description" content="Global Meridian International Group delivers premium global trade, sourcing, compliance, logistics, and advisory solutions." />
+  <meta name="theme-color" content="#060A14" />
 
-<style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Global Meridian International Group" />
+  <meta property="og:description" content="Premium global trade, sourcing, compliance, logistics, and advisory solutions." />
+  <meta property="og:type" content="website" />
 
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-}
-.hero{
-    min-height:100vh;
-    background:url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b') center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background-blend-mode: overlay;
-    background-color: rgba(0,0,0,0.6);
-}
-.hero h1{
-    font-size:52px;
-    margin:0;
-}
-.hero p{
-    font-size:20px;
-    max-width:800px;
-}
-.section{
-    padding:80px 20px;
-    text-align:center;
-    background:#0f172a;
-}
-.services{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-}
-.card{
-    background:#1e293b;
-    padding:30px;
-    width:260px;
-    border-radius:8px;
-}
-.stats{
-    display:flex;
-    justify-content:center;
-    gap:60px;
-    font-size:28px;
-    margin-top:40px;
-}
-.footer{
-    padding:40px;
-    text-align:center;
-    background:#020617;
-    color:#94a3b8;
-}
-</style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#050714;
+      --bg1:#070A1A;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --stroke: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.55);
+      --shadow: 0 22px 55px rgba(0,0,0,.55);
+      --shadow2: 0 14px 35px rgba(0,0,0,.45);
+      --grad: linear-gradient(120deg, #7C3AED 0%, #22D3EE 45%, #34D399 100%);
+      --grad2: linear-gradient(120deg, rgba(124,58,237,.25), rgba(34,211,238,.22), rgba(52,211,153,.18));
+      --accent:#22D3EE;
+      --accent2:#7C3AED;
+      --ok:#34D399;
+      --warn:#F59E0B;
+      --radius: 18px;
+      --radius2: 28px;
+      --max: 1160px;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 15% 10%, rgba(124,58,237,.22), transparent 60%),
+                  radial-gradient(900px 500px at 85% 15%, rgba(34,211,238,.20), transparent 55%),
+                  radial-gradient(900px 700px at 50% 95%, rgba(52,211,153,.14), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--text);
+      overflow-x:hidden;
+    }
+
+    /* Subtle animated grain */
+    .grain{
+      pointer-events:none;
+      position:fixed; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity:.08;
+      animation: grainMove 8s steps(10) infinite;
+    }
+    @keyframes grainMove{
+      0%{ transform: translate3d(0,0,0); }
+      25%{ transform: translate3d(-2%, 1%,0); }
+      50%{ transform: translate3d(-4%, -1%,0); }
+      75%{ transform: translate3d(2%, -2%,0); }
+      100%{ transform: translate3d(0,0,0); }
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin-inline:auto; }
+
+    /* Top bar */
+    .topbar{
+      position:fixed; top:0; left:0; right:0;
+      z-index:1000;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(5,7,20,.75), rgba(5,7,20,.38));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: var(--grad);
+      box-shadow: 0 12px 28px rgba(34,211,238,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 55%);
+      transform: rotate(25deg);
+    }
+    .brand b{ font-weight:700; letter-spacing:.2px; }
+    .brand small{
+      display:block; color:var(--muted2);
+      font-size:12px; margin-top:2px;
+    }
+
+    .nav{
+      display:flex; align-items:center; gap:18px;
+    }
+    .nav a{
+      color:var(--muted);
+      font-size:14px;
+      padding:10px 10px;
+      border-radius:12px;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+    .nav a:hover{
+      color:var(--text);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.08);
+    }
+
+    .actions{ display:flex; align-items:center; gap:10px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      transition:.2s ease;
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+    .btn.primary{
+      border: 1px solid rgba(34,211,238,.35);
+      background: linear-gradient(120deg, rgba(34,211,238,.22), rgba(124,58,237,.18));
+    }
+    .btn .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(34,211,238,.15);
+    }
+
+    .hamburger{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      align-items:center; justify-content:center;
+      cursor:pointer;
+    }
+    .hamburger span{
+      width:18px; height:2px; background:rgba(255,255,255,.82);
+      display:block; position:relative;
+    }
+    .hamburger span:before,.hamburger span:after{
+      content:""; position:absolute; left:0; right:0; height:2px;
+      background:rgba(255,255,255,.82);
+    }
+    .hamburger span:before{ top:-6px; }
+    .hamburger span:after{ top:6px; }
+
+    /* Hero */
+    .hero{
+      padding-top: 92px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: stretch;
+      padding: 34px 0 18px;
+    }
+
+    .hero-left{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(900px 420px at 10% 15%, rgba(124,58,237,.26), transparent 55%),
+                  radial-gradient(700px 420px at 85% 35%, rgba(34,211,238,.20), transparent 55%),
+                  radial-gradient(700px 520px at 55% 95%, rgba(52,211,153,.16), transparent 60%);
+      opacity:.9;
+      z-index:0;
+    }
+    .hero-left > *{ position:relative; z-index:1; }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size:13px;
+      width: fit-content;
+    }
+    .pill .spark{
+      width:18px; height:18px; border-radius:6px;
+      background: var(--grad);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
+    }
+
+    h1{
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing:-.6px;
+      margin-top:14px;
+    }
+    .lead{
+      margin-top:14px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .hero-cta{
+      margin-top: 22px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .trust-row{
+      margin-top: 22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color: var(--muted2);
+      font-size:12px;
+      align-items:center;
+    }
+    .trust-row .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .badge i{
+      width:10px; height:10px; border-radius:999px; display:inline-block;
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.12);
+    }
+
+    .hero-right{
+      display:grid;
+      gap: 14px;
+    }
+
+    .media-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+      min-height: 240px;
+    }
+    .media-card img{
+      width:100%; height:100%;
+      object-fit: cover;
+      transform: scale(1.03);
+      filter: saturate(1.15) contrast(1.05);
+    }
+    .media-overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,20,.12), rgba(5,7,20,.72));
+    }
+    .media-caption{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      padding:14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(6,10,20,.45);
+      backdrop-filter: blur(10px);
+    }
+    .media-caption b{ display:block; font-size:14px; }
+    .media-caption span{ display:block; margin-top:4px; color: var(--muted); font-size:13px; line-height:1.55; }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .mini{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+      min-height: 148px;
+    }
+    .mini:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: var(--grad2);
+      opacity:.95;
+      z-index:0;
+    }
+    .mini > *{ position:relative; z-index:1; }
+    .mini b{ font-size:14px; display:flex; align-items:center; gap:10px; }
+    .mini .ico{
+      width:34px; height:34px; border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:16px;
+    }
+    .mini p{ margin-top:10px; color: rgba(255,255,255,.78); font-size:13px; line-height:1.55; }
+    .mini .kpi{
+      margin-top: 12px;
+      display:flex; align-items:baseline; gap:10px;
+      color: rgba(255,255,255,.92);
+    }
+    .mini .kpi strong{ font-size:22px; letter-spacing:-.4px; }
+    .mini .kpi span{ font-size:12px; color: rgba(255,255,255,.70); }
+
+    /* Sections */
+    section{
+      padding: 54px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .section-head h2{
+      font-size: 26px;
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+      margin: 12px 0 0;
+    }
+
+    /* Cards */
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+      margin-top: 18px;
+      align-items: stretch;
+    }
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 16px 38px rgba(0,0,0,.35);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+      transition: .2s ease;
+    }
+    .card:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.16); }
+    .card .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .tag{
+      font-size:12px;
+      color: rgba(255,255,255,.78);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .card h3{
+      margin-top: 12px;
+      font-size: 16px;
+      letter-spacing:-.2px;
+    }
+    .card p{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .bullet{
+      margin-top: 12px;
+      display:grid;
+      gap: 10px;
+    }
+    .bullet span{
+      display:flex; gap:10px; align-items:flex-start;
+      color: rgba(255,255,255,.80);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .check{
+      width:18px; height:18px; border-radius:7px;
+      background: rgba(52,211,153,.18);
+      border: 1px solid rgba(52,211,153,.28);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.10);
+      flex: 0 0 auto;
+      margin-top: 1px;
+      position:relative;
+    }
+    .check:after{
+      content:"";
+      position:absolute;
+      width:7px; height:4px;
+      border-left:2px solid rgba(255,255,255,.88);
+      border-bottom:2px solid rgba(255,255,255,.88);
+      transform: rotate(-45deg);
+      left:4px; top:6px;
+    }
+
+    /* Markets */
+    .markets{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .market-card{
+      padding: 0;
+      overflow:hidden;
+      min-height: 260px;
+      position:relative;
+    }
+    .market-card img{
+      width:100%; height:100%;
+      object-fit:cover;
+      filter: saturate(1.12) contrast(1.05);
+      transform: scale(1.04);
+    }
+    .market-card .shade{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,20,.10), rgba(5,7,20,.78));
+    }
+    .market-card .content{
+      position:absolute; inset:auto 16px 16px 16px;
+      padding: 16px;
+      border-radius: 20px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(6,10,20,.45);
+      backdrop-filter: blur(10px);
+    }
+    .market-card h3{ margin:0; font-size: 16px; }
+    .market-card p{ margin-top: 8px; color: var(--muted); font-size: 13px; line-height:1.6; }
+    .chips{ margin-top: 10px; display:flex; flex-wrap:wrap; gap:8px; }
+    .chip{
+      font-size:12px;
+      padding: 6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.78);
+    }
+
+    /* Contact */
+    .contact-wrap{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .contact-wrap:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(900px 420px at 10% 0%, rgba(34,211,238,.18), transparent 55%),
+                  radial-gradient(800px 520px at 95% 20%, rgba(124,58,237,.18), transparent 58%),
+                  radial-gradient(900px 520px at 55% 95%, rgba(52,211,153,.14), transparent 60%);
+      opacity:1;
+      z-index:0;
+    }
+    .contact-inner{
+      position:relative; z-index:1;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      padding: 18px;
+    }
+    .contact-panel{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 18px;
+    }
+    .contact-panel h3{ font-size: 16px; }
+    .contact-panel p{ margin-top: 10px; color: var(--muted); font-size: 13px; line-height:1.7; }
+    .contact-list{
+      margin-top: 14px;
+      display:grid;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,.80);
+    }
+    .item{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .item .ic{
+      width:34px; height:34px; border-radius: 12px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      font-size:16px;
+    }
+    .item b{ display:block; font-size:13px; }
+    .item span{ display:block; margin-top:2px; color: var(--muted2); font-size:12px; line-height:1.5; }
+    .mini-form{
+      margin-top: 12px;
+      display:grid;
+      gap: 10px;
+    }
+    .fake-input{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.70);
+      font-size: 13px;
+    }
+    .fake-input strong{ color: rgba(255,255,255,.92); font-weight:600; }
+    .note{
+      margin-top: 10px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer{
+      padding: 32px 0 44px;
+      color: rgba(255,255,255,.60);
+      font-size: 12px;
+    }
+    .foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 16px;
+      flex-wrap:wrap;
+    }
+    .foot a{ color: rgba(255,255,255,.70); }
+    .foot a:hover{ color: rgba(255,255,255,.90); }
+
+    /* Reveal animations */
+    .reveal{
+      opacity:0;
+      transform: translateY(10px);
+      transition: .55s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Mobile */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .markets{ grid-template-columns: 1fr; }
+      .contact-inner{ grid-template-columns: 1fr; }
+
+      .nav{ display:none; }
+      .hamburger{ display:inline-flex; }
+      .brand{ min-width: unset; }
+    }
+
+    /* Mobile nav sheet */
+    .sheet{
+      position:fixed; inset:0;
+      background: rgba(5,7,20,.72);
+      backdrop-filter: blur(10px);
+      z-index: 1200;
+      display:none;
+      padding: 18px;
+    }
+    .sheet.show{ display:block; }
+    .sheet-inner{
+      width:min(520px, 100%);
+      margin: 0 auto;
+      border-radius: 24px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet-top{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 6px 6px 12px;
+    }
+    .close{
+      width:44px; height:44px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      color: rgba(255,255,255,.9);
+      font-size:18px;
+    }
+    .sheet-nav{
+      display:grid;
+      gap: 10px;
+      padding: 6px;
+    }
+    .sheet-nav a{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.86);
+      font-weight:600;
+      font-size:14px;
+    }
+    .sheet-nav a:hover{
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+    }
+  </style>
 </head>
 
 <body>
-<div style="position:fixed;top:0;width:100%;background:#020617;padding:15px;text-align:center;z-index:999;">
-<a href="index.html" style="color:white;margin:20px;">Home</a>
-<a href="about.html" style="color:white;margin:20px;">About</a>
-<a href="services.html" style="color:white;margin:20px;">Services</a>
-<a href="markets.html" style="color:white;margin:20px;">Markets</a>
-<a href="contact.html" style="color:white;margin:20px;">Contact</a>
-</div>
+  <div class="grain"></div>
 
-<div class="hero">
-    <h1>Global Meridian International Group</h1>
-    <p>Strategic global import and export solutions across Asia, Europe, North America and emerging markets.</p>
-</div>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Global Meridian International Group Home">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          <b>Global Meridian</b>
+          <small>International Group</small>
+        </div>
+      </a>
 
-<div class="section">
-    <h2>Our Core Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Global Sourcing</h3>
-            <p>Strategic procurement and supplier network integration.</p>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#markets">Markets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="#services" title="Explore capabilities">
+          <span class="dot" aria-hidden="true"></span>
+          Capabilities
+        </a>
+        <a class="btn primary" href="#contact" title="Get in touch">
+          Request a Brief
+        </a>
+
+        <button class="hamburger" id="openMenu" aria-label="Open menu">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile sheet -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-inner">
+      <div class="sheet-top">
+        <div class="brand" style="gap:10px">
+          <span class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px"></span>
+          <div>
+            <b>Global Meridian</b>
+            <small>International Group</small>
+          </div>
         </div>
-        <div class="card">
-            <h3>Export Compliance</h3>
-            <p>International documentation and regulatory coordination.</p>
+        <button class="close" id="closeMenu" aria-label="Close menu">✕</button>
+      </div>
+      <div class="sheet-nav">
+        <a href="#about" class="sheetLink">About</a>
+        <a href="#services" class="sheetLink">Services</a>
+        <a href="#markets" class="sheetLink">Markets</a>
+        <a href="#contact" class="sheetLink">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left reveal">
+        <div class="pill">
+          <span class="spark" aria-hidden="true"></span>
+          Premium cross-border trade execution and advisory
         </div>
-        <div class="card">
-            <h3>Logistics Management</h3>
-            <p>End-to-end freight and supply chain execution.</p>
+
+        <h1>Precision trade. Global reach. Executive-grade delivery.</h1>
+        <p class="lead">
+          Global Meridian International Group supports high-performing organizations with streamlined sourcing,
+          compliance architecture, logistics orchestration, and market entry strategy across established and emerging corridors.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Start a Conversation</a>
+          <a class="btn" href="#markets">Explore Market Coverage</a>
         </div>
-        <div class="card">
-            <h3>Trade Advisory</h3>
-            <p>Market structuring and cross-border consulting.</p>
+
+        <div class="trust-row" aria-label="Trust indicators">
+          <span class="badge"><i aria-hidden="true"></i> Multi-region operations</span>
+          <span class="badge"><i aria-hidden="true"></i> Compliance-first framework</span>
+          <span class="badge"><i aria-hidden="true"></i> Enterprise-ready processes</span>
         </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="media-card reveal" style="transition-delay: .06s">
+          <img alt="Global logistics and trade routes" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80">
+          <div class="media-overlay"></div>
+          <div class="media-caption">
+            <b>Integrated Trade Command Center</b>
+            <span>From supplier onboarding to delivery assurance—controlled, measurable, and scalable.</span>
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini reveal" style="transition-delay: .12s">
+            <b><span class="ico" aria-hidden="true">⚡</span>Execution Velocity</b>
+            <p>Rapid alignment across stakeholders with clear milestones and risk controls.</p>
+            <div class="kpi"><strong>24/7</strong><span>coordination cadence</span></div>
+          </div>
+          <div class="mini reveal" style="transition-delay: .18s">
+            <b><span class="ico" aria-hidden="true">🛡️</span>Compliance Intelligence</b>
+            <p>Documentation rigor and regulatory readiness built into every workflow.</p>
+            <div class="kpi"><strong>360°</strong><span>controls coverage</span></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="stats">
-        <div><strong>30+</strong><br>Countries</div>
-        <div><strong>500+</strong><br>Clients</div>
-        <div><strong>12+</strong><br>Years Experience</div>
+    <div class="container">
+      <div class="divider"></div>
     </div>
-</div>
-<div class="section">
-    <h2>About The Group</h2>
-    <p style="max-width:900px;margin:30px auto;font-size:18px;line-height:1.8;">
-        Global Meridian International Group is a diversified international trade organization 
-        delivering integrated sourcing, compliance, logistics and advisory solutions.
-        Since 2012, the group has expanded operations across Asia, Europe and North America,
-        establishing a strong international supply network.
-    </p>
-</div>
+  </main>
 
-<div class="section">
-    <h2>Global Presence</h2>
-    <div class="stats">
-        <div><strong>30+</strong><br>Countries</div>
-        <div><strong>500+</strong><br>Clients</div>
-        <div><strong>12+</strong><br>Years Experience</div>
-        <div><strong>6</strong><br>Regional Offices</div>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2>About the Group</h2>
+          <p>
+            We operate as a high-trust partner for international trade—combining disciplined governance, refined supplier networks,
+            and an executive advisory mindset to deliver resilient cross-border performance.
+          </p>
+        </div>
+        <div class="tag">Strategy • Compliance • Logistics • Advisory</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card reveal">
+          <div class="top">
+            <div class="tag">Operating Model</div>
+            <div class="tag">Global Standards</div>
+          </div>
+          <h3>Built for board-level confidence</h3>
+          <p>
+            Our approach emphasizes predictable outcomes: transparent communication, measurable execution,
+            and systematic risk reduction across procurement, documentation, freight, and delivery assurance.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Supplier qualification and performance governance</span>
+            <span><span class="check" aria-hidden="true"></span>Trade documentation discipline with audit-ready trails</span>
+            <span><span class="check" aria-hidden="true"></span>Lane design, freight optimization, and exception management</span>
+            <span><span class="check" aria-hidden="true"></span>Commercial advisory for expansion and corridor strategy</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="overflow:hidden">
+          <div class="top">
+            <div class="tag">Group Snapshot</div>
+            <div class="tag">Selective Partnerships</div>
+          </div>
+          <h3>Capability at scale, attention in detail</h3>
+          <p>
+            We support clients across multiple regions and product categories with a partnership model designed
+            for long-term value and operational clarity.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Coverage across major trade corridors and growth markets</span>
+            <span><span class="check" aria-hidden="true"></span>Multi-office structure across key regional hubs</span>
+            <span><span class="check" aria-hidden="true"></span>Proven multi-year experience in cross-border execution</span>
+            <span><span class="check" aria-hidden="true"></span>Enterprise-grade confidentiality and process controls</span>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
-<div class="footer">
-    <p>Contact: info@globalmeridiantrading.com</p>
-    <p>© 2026 Global Meridian International Group</p>
-</div>
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2>Services</h2>
+          <p>
+            High-impact capabilities across the full trade lifecycle—designed for speed, control, and premium service standards.
+          </p>
+        </div>
+        <div class="tag">End-to-end trade enablement</div>
+      </div>
 
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="top">
+            <div class="tag">Sourcing</div>
+            <div class="tag">Supplier Network</div>
+          </div>
+          <h3>Strategic Global Sourcing</h3>
+          <p>
+            Curated supplier discovery, qualification, and negotiation support—optimized for quality, lead time, and total cost.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Supplier vetting and onboarding governance</span>
+            <span><span class="check" aria-hidden="true"></span>Quality pathways and production assurance</span>
+            <span><span class="check" aria-hidden="true"></span>Commercial alignment and contract support</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="transition-delay:.06s">
+          <div class="top">
+            <div class="tag">Compliance</div>
+            <div class="tag">Documentation</div>
+          </div>
+          <h3>Export & Import Compliance</h3>
+          <p>
+            Documentation orchestration and regulatory readiness with a clean, auditable workflow that reduces shipment friction.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Documentation checks and exception prevention</span>
+            <span><span class="check" aria-hidden="true"></span>Classification and process validation</span>
+            <span><span class="check" aria-hidden="true"></span>Risk-aware trade coordination</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="transition-delay:.12s">
+          <div class="top">
+            <div class="tag">Logistics</div>
+            <div class="tag">Control Tower</div>
+          </div>
+          <h3>Logistics Management</h3>
+          <p>
+            Freight strategy, lane planning, and end-to-end visibility—ensuring predictable transit and accountable delivery.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Route design and carrier coordination</span>
+            <span><span class="check" aria-hidden="true"></span>Milestone visibility and escalation management</span>
+            <span><span class="check" aria-hidden="true"></span>On-time delivery assurance approach</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="transition-delay:.18s">
+          <div class="top">
+            <div class="tag">Advisory</div>
+            <div class="tag">Market Entry</div>
+          </div>
+          <h3>Trade & Market Advisory</h3>
+          <p>
+            Corridor strategy, partner mapping, and structured expansion support—built to accelerate entry while controlling risk.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Go-to-market structuring</span>
+            <span><span class="check" aria-hidden="true"></span>Partner selection and governance</span>
+            <span><span class="check" aria-hidden="true"></span>Operational playbooks and execution support</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="transition-delay:.24s">
+          <div class="top">
+            <div class="tag">Assurance</div>
+            <div class="tag">Quality</div>
+          </div>
+          <h3>Quality & Performance Assurance</h3>
+          <p>
+            Quality checkpoints, performance metrics, and continuous improvement—helping reduce variability and elevate outcomes.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Pre-shipment readiness alignment</span>
+            <span><span class="check" aria-hidden="true"></span>Supplier performance monitoring</span>
+            <span><span class="check" aria-hidden="true"></span>Issue resolution governance</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="transition-delay:.30s">
+          <div class="top">
+            <div class="tag">Client Service</div>
+            <div class="tag">Premium</div>
+          </div>
+          <h3>Executive Service Layer</h3>
+          <p>
+            Clear communication, decisive escalation paths, and a premium client experience designed for high-stakes operations.
+          </p>
+          <div class="bullet">
+            <span><span class="check" aria-hidden="true"></span>Dedicated coordination and reporting</span>
+            <span><span class="check" aria-hidden="true"></span>Milestone accountability</span>
+            <span><span class="check" aria-hidden="true"></span>Confidentiality-first engagement model</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets -->
+  <section id="markets">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2>Markets</h2>
+          <p>
+            Coverage across key regions with flexible corridor design—supporting both mature routes and emerging opportunities.
+          </p>
+        </div>
+        <div class="tag">Asia • Europe • North America • Emerging Markets</div>
+      </div>
+
+      <div class="markets">
+        <div class="card market-card reveal">
+          <img alt="Modern city skyline representing global commerce" src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1600&q=80">
+          <div class="shade"></div>
+          <div class="content">
+            <h3>Core Corridors</h3>
+            <p>Established trade lanes designed for reliability, compliance clarity, and predictable delivery windows.</p>
+            <div class="chips">
+              <span class="chip">Asia-Pacific</span>
+              <span class="chip">EU & UK</span>
+              <span class="chip">North America</span>
+              <span class="chip">GCC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card market-card reveal" style="transition-delay:.08s">
+          <img alt="Port cranes and container logistics" src="https://images.unsplash.com/photo-1473447198190-0a2a7b6a0d13?auto=format&fit=crop&w=1600&q=80">
+          <div class="shade"></div>
+          <div class="content">
+            <h3>Growth Markets</h3>
+            <p>Adaptive sourcing and corridor expansion support with risk-aware planning and partner governance.</p>
+            <div class="chips">
+              <span class="chip">Southeast Asia</span>
+              <span class="chip">LATAM</span>
+              <span class="chip">Africa</span>
+              <span class="chip">Central Asia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:14px">
+        <div class="card reveal">
+          <div class="top">
+            <div class="tag">Industries</div>
+            <div class="tag">Multi-sector</div>
+          </div>
+          <h3>Cross-sector execution</h3>
+          <p>Flexible to multiple product categories with an emphasis on controlled processes and dependable delivery.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.06s">
+          <div class="top">
+            <div class="tag">Risk</div>
+            <div class="tag">Controls</div>
+          </div>
+          <h3>Risk-aware operations</h3>
+          <p>Structured risk checks across documentation, carrier coordination, and supplier performance monitoring.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.12s">
+          <div class="top">
+            <div class="tag">Visibility</div>
+            <div class="tag">Reporting</div>
+          </div>
+          <h3>Clarity for stakeholders</h3>
+          <p>Executive-friendly status reporting and escalation pathways to keep decisions fast and outcomes stable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2>Contact</h2>
+          <p>
+            Connect with our team for a brief discussion. We respond with clarity, speed, and a premium service standard.
+          </p>
+        </div>
+        <div class="tag">Confidential • Responsive • Professional</div>
+      </div>
+
+      <div class="contact-wrap reveal">
+        <div class="contact-inner">
+          <div class="contact-panel">
+            <h3>How to reach us</h3>
+            <p>
+              For partnership inquiries, sourcing requests, compliance discussions, and logistics coordination,
+              please use the channels below.
+            </p>
+
+            <div class="contact-list">
+              <div class="item">
+                <div class="ic" aria-hidden="true">✉️</div>
+                <div>
+                  <b>Email</b>
+                  <span>info@globalmeridiantrading.com</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ic" aria-hidden="true">🌐</div>
+                <div>
+                  <b>Global Coordination</b>
+                  <span>Multi-region coverage with a hub-and-spoke operating model.</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ic" aria-hidden="true">🧭</div>
+                <div>
+                  <b>Engagement Type</b>
+                  <span>Sourcing • Compliance • Logistics • Advisory</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="note">
+              We maintain a selective partnership policy to ensure exceptional execution and confidentiality.
+            </p>
+          </div>
+
+          <div class="contact-panel">
+            <h3>Request a brief</h3>
+            <p>
+              Prefer a clean, fast start? Use the quick brief template below. Copy and email it—no forms required.
+            </p>
+
+            <div class="mini-form" aria-label="Quick brief template">
+              <div class="fake-input"><strong>Subject:</strong> Trade Support Brief — (Company / Project)</div>
+              <div class="fake-input"><strong>Scope:</strong> Sourcing / Compliance / Logistics / Advisory</div>
+              <div class="fake-input"><strong>Markets:</strong> Origin → Destination corridor(s)</div>
+              <div class="fake-input"><strong>Timeline:</strong> Target start window & urgency</div>
+              <div class="fake-input"><strong>Notes:</strong> Any constraints or priorities</div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a class="btn primary" href="mailto:info@globalmeridiantrading.com?subject=Trade%20Support%20Brief&body=Company%2FProject%3A%0AScope%3A%0AMarkets%3A%0ATimeline%3A%0ANotes%3A">
+                Email the Brief
+              </a>
+              <a class="btn" href="#services">Review Services</a>
+            </div>
+
+            <p class="note">
+              By contacting us, you agree to communicate only non-sensitive information until a confidentiality framework is established.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>© Global Meridian International Group. All rights reserved.</div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#markets">Markets</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const sheet = document.getElementById('sheet');
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const sheetLinks = document.querySelectorAll('.sheetLink');
+
+    function showSheet(){
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function hideSheet(){
+      sheet.classList.remove('show');
+      sheet.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    openMenu?.addEventListener('click', showSheet);
+    closeMenu?.addEventListener('click', hideSheet);
+    sheet?.addEventListener('click', (e)=>{ if(e.target === sheet) hideSheet(); });
+    sheetLinks.forEach(a => a.addEventListener('click', hideSheet));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      for(const e of entries){
+        if(e.isIntersecting) e.target.classList.add('show');
+      }
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
